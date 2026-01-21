@@ -1,4 +1,6 @@
-﻿namespace WSConvertisseur.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WSConvertisseur.Models
 {
     public class Devise
     {
@@ -18,6 +20,7 @@
             this.Taux = taux;
         }
 
+        [Required]
         public int Id
         {
             get
@@ -31,6 +34,7 @@
             }
         }
 
+        [Required]
         public string? NomDevise
         {
             get
@@ -44,6 +48,7 @@
             }
         }
 
+        [Required]
         public double Taux
         {
             get
