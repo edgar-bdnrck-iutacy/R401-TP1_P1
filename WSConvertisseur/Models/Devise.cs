@@ -61,5 +61,18 @@ namespace WSConvertisseur.Models
                 this.taux = value;
             }
         }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Devise devise &&
+                   this.Id == devise.Id &&
+                   this.NomDevise == devise.NomDevise &&
+                   this.Taux == devise.Taux;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(this.Id, this.NomDevise, this.Taux);
+        }
     }
 }
